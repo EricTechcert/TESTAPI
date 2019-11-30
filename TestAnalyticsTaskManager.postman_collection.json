@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "6f2675ff-0b2e-4b21-adde-ebf51ac0a7c9",
+		"name": "TestAnalyticsTaskManager",
+		"description": "Enviroment: TEST\nApplication: Task Manager\nurl: https://analyticsapitests.adradev.com/taskmanager/api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test-TM Metadata",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches TaskAttachmentDimension\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TaskAttachmentDimension\");",
+							"});",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						""
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TaskCommentFacts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fde8054c-836a-4998-919b-e97cf830b684",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches CommentAddedByName\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Suvi Original Business Admin\");",
+							"});",
+							"pm.test(\"Response time is less than 600ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TaskCommentFacts",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TaskCommentFacts"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TaskFacts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b98f6022-5b20-4231-87d2-18183e38fe07",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches TaskSettingsKey\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"3505622\");",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TaskFacts",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TaskFacts"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM EngagementDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a37b8ba8-8a25-417b-b2bc-330f219cb678",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body contain Suvi NE\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Test Engagement Suvi NE\");",
+							"});",
+							"",
+							"pm.test(\"Body matches Suvi Test test eng\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Suvi_Test_Test\");",
+							"});",
+							"",
+							"pm.test(\"Body matches Suvi Test test eng\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Suvi AS engagement\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/EngagementDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"EngagementDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM DepartmentDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f959f6d-a755-41c9-a5d7-7506a0ea1de6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches DepartmentName\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Test Dep 01\");",
+							"});",
+							"pm.test(\"Response time is less than 600ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/DepartmentDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"DepartmentDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM CompanyDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches CompanyName\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Company 01 -edited\");",
+							"});",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/CompanyDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"CompanyDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TaskSettingsDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches TaskCode\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"10056\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(20000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TaskSettingsDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TaskSettingsDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TaskExtraFieldsDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Template test\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TaskSettingsDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TaskSettingsDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TaskListDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Test Task List -Smoke\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TaskListDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TaskListDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TeamsDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches TeamName\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Team A\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TeamsDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TeamsDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM FrequencyDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Adhoc\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/FrequencyDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"FrequencyDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Test-TM TaskAttachmentDimension",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3114f6-ce11-403c-ad69-d78256fcac3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"import task.JPG\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9baa6d-cece-4a6d-a183-955329ab0498",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://analyticsapitests.adradev.com/taskmanager/api/TaskAttachmentDimension",
+					"protocol": "https",
+					"host": [
+						"analyticsapitests",
+						"adradev",
+						"com"
+					],
+					"path": [
+						"taskmanager",
+						"api",
+						"TaskAttachmentDimension"
+					]
+				},
+				"description": "Environment: Test"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "22fa58cf47e1baa789c2197ee62b8dcc7e2eee18181b2713ccb7e6d7620540b5",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "14f74a16-7e30-404b-81cd-7fb5051016c4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d40388d4-8895-4a5a-b818-6be5d2f4150f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
